@@ -12,6 +12,10 @@
 					<h5>{{ venue.name }}</h5>
 				</div>
 			</a>
+			<form action="{{ url_for('delete_venue', venue_id=venue.id) }}" method="POST">
+				<input type="hidden" name="_method" value="DELETE">
+				<button type="submit" class="btn btn-danger">Delete</button>
+			</form>
 		</li>
 		{% endfor %}
 	</ul>
